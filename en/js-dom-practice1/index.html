@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>HTML-CSS-JS</title>
+
+    <style>
+      h3 {
+        color: darkred;
+      }
+      div {
+        border: solid gray 1px;
+      }
+    </style>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+
+
+  <body style="background-color: bisque">
+
+    <div id="dom">
+      <h3>What we can do with object Model (DOM):</h3>
+      <h4>JS gets all the power it needs to create dynamic HTML.</h4>
+      <ol>
+        <li>JS can change all the HTML content elements in the page</li>
+        <li>JS can change all the HTML elements attrubutes in the page</li>
+        <li>JS can change all the CSS style in the page</li>
+        <li>JS can remove existing HTML elemnts and attribustes</li>
+        <li>JS can add new HTML element and attributes</li>
+        <li>JS can react to all existing HTML events in the page</li>
+        <li>JS can create new HTML event in the page</li>
+      </ol>
+    </div>
+
+    
+
+    <div id="step1">
+      <h3>Step1: Find HTML Element:</h3>
+      <h4>We know that DOM (document) objects has every mata data about webpage.</h4>
+      <ol>
+        <li>document.getElementByID(ID): Find element by ID</li>
+        <li>document.getElementByTagName(name): Find element by tagname</li>
+        <li>
+          document.getElementByClassName(ClassName): Find Element by ClassName
+        </li>
+        <li>
+          document.querySelector(selector): #elementID, .ClassName, tagName
+        </li>
+      </ol>
+    </div>
+
+
+
+    <div id="step2">
+      <h3>Step2: Change HTML elements:</h3>
+      <h4>Property:</h4>
+      <ol>        
+        <li>
+          element.InnerHTML = new html content ==> change the html content
+        </li>
+        <li>element.InnerText = new html content</li>
+        <li>
+          element.attribute = new value ==> Change the attribute value of an
+          HTML element
+        </li>
+        <li>
+          element.style.property = new style ==> change the style of html
+          element
+        </li>
+        Method: element.setAttribute(attribute, value) ==> Add an attribute to
+        the html element
+      </ol>
+    </div>
+
+
+
+    <div id="step3">
+      <h3>Step3: adding and Deleting Elements:</h3>
+      <ol>
+        <li>document.createElement(element): create an html element</li>
+        <li>document.removeChild(element): Remove an HTML element</li>
+        <li>document.apendChild(element): add an HTML element</li>
+        <li>document.replaceChild(new, old): replace an element</li>
+      </ol>
+    </div>
+
+
+
+    <div id="practice1" class="practice">
+      <h3>Practice 1: Change HTML Content with querySelector</h3>
+      <h2 id="heading">This content going to be change by JS using my id.</h2>
+      <!-- heading içeriği "I come from JS and I remove the old content." ile değişiyor. -->
+
+      <p class="content">
+        The content of me going to be change by JS using my class name.
+      </p>
+      <!-- content içeriği "I have been putted here by JS" ile değişiyor. -->
+    </div>
+
+
+    <div>
+      <h3>
+        Practice 2: Change HTML content by getElementByID, getElementByClassName
+        and in JS file.
+      </h3>
+      <p id="changeContent1">I will be change by JS file using my id.</p>
+      <!-- changeContent1 içeriği "This text been assigned by JS to here." değişiyor -->
+    </div>
+
+
+    <div>
+      <h3>Practice 3: Change/set Attribute value</h3>
+      <img src="/June13/pigeon.jpeg" alt="" id="setAttribute" />
+      <p>Change the the value of src attribute</p>
+      <iframe
+        src="https://wisequarter.com"
+        frameborder="0"
+        height="500"
+        ,
+        width="400"
+        id="wise"
+      ></iframe>
+    </div>
+
+
+    <div>
+      <h3>Praactice4: Change style of element by using their class:</h3>
+      <p class="style">I got that nice color from JS.</p>
+      <p class="style">JS assigned me that nice background-color</p>
+      <p class="style">Thanks to JS it make me looks better...</p>
+    </div>
+
+
+    <div>
+      <h3>Practice5: Remove an Element:</h3>
+      <p class="removing">One of us will be delete by JS</p>
+      <p class="removing">Who is that unlucky element</p>
+      <p class="removing">Lets the game start</p>
+    </div>
+
+
+    <div>
+      <h3>Practice6:Event</h3>
+      <p
+        style="cursor: pointer"
+        onclick="this.innerHTML='I come here after you click me...!'"
+      >
+        Click me...!
+      </p>
+      <p>
+        Click on button below to find out how many minutes left for class to be
+        done...
+      </p>
+      <p id="minutes"></p>
+      <button style="cursor: pointer" id="btn" onclick="minutes()">
+        How many Minutes Left?
+      </button>
+    </div>
+
+
+    <script src="script.js"></script>
+
+    <script>
+      //Way1: You can create script element to write any JS syntax in your html file.
+      //Way2: You can create JS file then link that by using script element.
+      //Step1: Find an element that you want do some modification,
+      let headingElement = document.querySelector("#heading"); //this will find an element with of heading
+      // we assign element to an variable.
+      //Step2: Update/change the content of element that we fetch from HTML.
+      headingElement.innerHTML = "I come from JS and I remove the old content.";
+
+      //Lets change the content p with in content class:
+      //Step1: find an element by its class:
+      let pElement = document.querySelector(".content"); //This will fetch element in class called content
+      pElement.innerText = "I have been putted here by JS";
+    </script>
+
+  </body>
+</html>

@@ -1,0 +1,24 @@
+#dom{
+    background-color:orchid;
+
+}
+#step1{
+    background-color: cyan;
+}
+#step2{
+    background-color: lightpink;
+}
+#step3{
+    background-color: lightcyan;
+}
+
+#practice1{
+    background-color: lightsalmon;
+}
+
+.style{
+    color: aqua;
+    background-color: ivory;
+    font-style: italic;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
